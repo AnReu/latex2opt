@@ -64,8 +64,7 @@ tokens = (
     '_R_VERT',
     'INFTY',
     '_SCRIPT',
-    'SINGLE_LETTER',
-    'STYLE'
+    'SINGLE_LETTER'
 )
 
 t_NUM = r'\d+\.?\d*'
@@ -117,11 +116,11 @@ t__R_CEIL = r'[\\right[ ]*]?\\rceil'
 t__R_FLOOR = r'[\\right[ ]*]?\\rfloor'
 
 t_SINGLE_LETTER = r'[a-zA-Z]'
-t_VAR = r'\*|\\ast|\\Alpha|\\Beta|\\Chi|\\Delta|\\Epsilon|\\Eta|\\Gamma|\\Iota|\\Kappa|\\Lambda|\\Mu|\\Nu|\\Omega|\\Omicron|\\Phi|\\Pi|\\Psi|\\Re|\\Rho|\\Sigma|\\Tau|\\Theta|\\Upsilon|\\VarLambda|\\VarOmega|\\Xi|\\Zeta|\\aleph|\\alpha|\\amalg|\\beta|\\beth|\\chi|\\delta|\\ell|\\epsilon|\\eta|\\eth|\\gamma|\\imath|\\iota|\\jmath|\\kappa|\\lambda|\\mho|\\mu|\\nu|\\omega|\\omicron|\\phi|\\psi|\\rho|\\sigma|\\tau|\\theta|\\top|\\upsilon|\\varDelta|\\varGamma|\\varPhi|\\varPi|\\varPsi|\\varSigma|\\varTheta|\\varUpsilon|\\varXi|\\varepsilon|\\varkappa|\\varphi|\\varpi|\\varpropto|\\varrho|\\varsigma|\\vartheta|\\wr|\\xi|\\zeta|\\backepsilon|\\partial|\\nabla|\\pi|\\empty|\\emptyset|\\emptyset|\\varnothing|\\triangledown|\\triangle|\\angle|\\vartriangleleft|\\vartriangleright|\\vartriangle|\\triangleleft|\\triangleright|\\measuredangle|\\sphericalangle|\\perp|\\bot|\\circ|\\%|\\.\\.\\.|\\dots|\\ldots|\\vdots|\\cdots|\\ddots|\\ddot|\\dddot|\\ddddot|\\dotsb|\\dotsc|\\dotsi|\\dotsm|\\dotso|\\iddots|\||\\\\\||\\vert|\\Vert|\\Arrowvert|\\arrowvert|\\bracevert|\\rvert|\\lvert|\\rVert|\\lVert|\\mid|\\nmid'
+t_VAR = r'\*|\\ast|\\Alpha|\\Beta|\\Chi|\\Delta|\\Epsilon|\\Eta|\\Gamma|\\Iota|\\Kappa|\\Lambda|\\Mu|\\Nu|\\Omega|\\Omicron|\\Phi|\\Pi|\\Psi|\\Re|\\Rho|\\Sigma|\\Tau|\\Theta|\\Upsilon|\\VarLambda|\\VarOmega|\\Xi|\\Zeta|\\aleph|\\alpha|\\amalg|\\beta|\\beth|\\chi|\\delta|\\ell|\\epsilon|\\eta|\\eth|\\gamma|\\imath|\\iota|\\jmath|\\kappa|\\lambda|\\mho|\\mu|\\nu|\\omega|\\omicron|\\phi|\\psi|\\rho|\\sigma|\\tau|\\theta|\\top|\\upsilon|\\varDelta|\\varGamma|\\varPhi|\\varPi|\\varPsi|\\varSigma|\\varTheta|\\varUpsilon|\\varXi|\\varepsilon|\\varkappa|\\varphi|\\varpi|\\varpropto|\\varrho|\\varsigma|\\vartheta|\\wr|\\xi|\\zeta|\\backepsilon|\\partial|\\nabla|\\pi|\\empty|\\emptyset|\\varnothing|\\triangledown|\\triangle|\\angle|\\vartriangleleft|\\vartriangleright|\\vartriangle|\\triangleleft|\\triangleright|\\measuredangle|\\sphericalangle|\\perp|\\bot|\\circ|\\%|\\.\\.\\.|\\dots|\\ldots|\\vdots|\\cdots|\\ddots|\\ddot|\\dddot|\\ddddot|\\dotsb|\\dotsc|\\dotsi|\\dotsm|\\dotso|\\iddots|\||\\\\\||\\vert|\\Vert|\\Arrowvert|\\arrowvert|\\bracevert|\\rvert|\\lvert|\\rVert|\\lVert|\\mid|\\nmid'
 t_SEP_CLASS = r'\\exists|\\nexists|\\forall|\||\\cr|\\newline|\\\\|\\enspace|\\atop|,|;|\\colon|:|\\And|\\\\&|\\qquad|\\quad|\\to|\\searrow|\\uparrow|\\updownarrow|\\upharpoonleft|\\upharpoonright|\\upuparrows|\\Leftarrow|\\Leftrightarrow|\\Lleftarrow|\\Longleftarrow|\\Longleftrightarrow|\\Longrightarrow|\\Lsh|\\Rightarrow|\\Rrightarrow|\\Rsh|\\Uparrow|\\Updownarrow|\\circlearrowleft|\\circlearrowright|\\curvearrowleft|\\curvearrowright|\\Downarrow|\\downarrow|\\downdownarrows|\\downharpoonleft|\\downharpoonright|\\hookleftarrow|\\hookrightarrow|\\gets|\\iff|\\impliedby|\\implies|\\leftarrow|\\leftarrowtail|\\leftharpoondown|\\leftharpoonup|\\leftleftarrows|\\leftrightarrow|\\leftrightarrows|\\leftrightharpoons|\\leftrightsquigarrow|\\longleftarrow|\\longleftrightarrow|\\longmapsto|\\longrightarrow|\\looparrowleft|\\looparrowright|\\mapsto|\\multimap|\\nLeftarrow|\\nLeftrightarrow|\\nRightarrow|\\nearrow|\\nleftarrow|\\nleftrightarrow|\\nrightarrow|\\nwarrow|\\rightarrow|\\rightarrowtail|\\rightharpoondown|\\rightharpoonup|\\rightleftarrows|\\rightleftharpoons|\\rightrightarrows|\\rightsquigarrow|\\swarrow|\\leadsto'
 t_FUN_CLASS = r'\\operatorname\*?\{[^}]*\}|\\exp|\\lg|\\ln|\\log|\\sin|\\sinh|\\arcsin|\\cos|\\arccos|\\cosh|\\tan|\\tanh|\\arctan|\\cot|\\coth|\\csc|\\sec|\\sgn|\\signum|\\sign|\\max|\\min|\\Pr|\\deg|\\det|\\dim|\\gcd|\\hom|\\ker'
 #t_SUM_CLASS = r'\\arg|\\inf|\\sup|\\liminf|\\limsup|\\varliminf|\\varlimsup|\\bigcap|\\bigcup|\\bigsqcup|\\biguplus|\\bigvee|\\bigwedge|\\bigcirc|\\bigodot|\\bigoplus|\\bigotimes|\\bigtriangledown|\\bigtriangleup|\\sum|\\prod|\\coprod|\\lim|\\injlim|\\varinjlim|\\varprojlim|\\projlim|\\idotsint|\\int|\\iint|\\iiint|\\iiiint|\\intop|\\smallint|\\oint'
-t_REL_CLASS = r'=|:=|\\[dD]oteq|\\dot=|\\approxeq|\\backsimeq|\\circeq|\\cong|\\backsim|\\curlyeqprec|\\curlyeqsucc|\\eqslantgtr|\\eqslantless|\\equiv|\\gnsim|\\triangleq|\\eqsim|\\thicksim|\\sim|\\simeq|\\nsim|\\neq|\\not(=|\\equiv)|\\frown|\\between|\\eqcirc|\\smallfrown|\\smallsmile|\\approx|\\asymp|\\ge|\\geq|\\geqq|\\geqslant|\\gg|\\gnapprox|\\gt|>|\\gtrapprox|\\gtrdot|\\gtreqless|\\gtreqqless|\\gtrless|\\gtrsim|\\le|\\leq|\\leqq|\\leqslant|\\lessapprox|\\lessdot|\\lesssim|\\ll|\\lnapprox|\\lneq|\\lneqq|\\lt|<|\\lvertneqq|\\ncong|\\ne|\\ngeq|\\ngeqq|\\ngeqslant|\\nleq|\\nleqq|\\nleqslant|\\nless|\\nprec|\\npreceq|\\nsucc|\\nsucceq|\\prec|\\preceq|\\succ|\\succapprox|\\succcurlyeq|\\thickapprox|\\trianglelefteq|\\trianglerighteq|\\succeq|\\succnapprox|\\succneqq|\\succnsim|\\succsim|\\unlhd|\\unrhd|\\gneq|\\gneqq|\\gvertneqq|\\ggg|\\gggtr|\\ngtr|\\precapprox|\\preccurlyeq|\\precnapprox|\\precneqq|\\precnsim|\\precsim|\\Cap|\\cap|\\Cup|\\cup|\\curlyvee|\\dashv|\\curlywedge|\\land|\\lor|\\sqcap|\\sqcup|\\vee|\\veebar|\\wedge|\\Join|\\bowtie|\\Subset|\\Supset|\\nsubseteq|\\nsupseteq|\\supseteq|\\subset|\\sqsubset|\\sqsubseteq|\\sqsupset|\\sqsupseteq|\\subseteq|\\subseteqq|\\subsetneq|\\subsetneqq|\\supset|\\supseteq|\\supseteqq|\\supsetneq|\\supsetneqq|\\varsubsetneq|\\varsubsetneqq|\\varsupsetneq|\\varsupsetneqq|\\in|\\ni|\\not\\in|\\owns|\\nparallel|\\parallel|\\propto'
+t_REL_CLASS = r'=|:=|\\[dD]oteq|\\dot=|\\approxeq|\\backsimeq|\\circeq|\\cong|\\backsim|\\curlyeqprec|\\curlyeqsucc|\\eqslantgtr|\\eqslantless|\\equiv|\\gnsim|\\triangleq|\\eqsim|\\thicksim|\\sim|\\simeq|\\nsim|\\neq|\\not(=|\\equiv)|\\frown|\\between|\\eqcirc|\\smallfrown|\\smallsmile|\\approx|\\asymp|\\ge|\\geq|\\geqq|\\geqslant|\\gg|\\gnapprox|\\gt|>|\\gtrapprox|\\gtrdot|\\gtreqless|\\gtreqqless|\\gtrless|\\gtrsim|\\le|\\leq|\\leqq|\\leqslant|\\lessapprox|\\lessdot|\\lesssim|\\ll|\\lnapprox|\\lneq|\\lneqq|\\lt|<|\\lvertneqq|\\ncong|\\ne|\\ngeq|\\ngeqq|\\ngeqslant|\\nleq|\\nleqq|\\nleqslant|\\nless|\\nprec|\\npreceq|\\nsucc|\\nsucceq|\\prec|\\preceq|\\succ|\\succapprox|\\succcurlyeq|\\thickapprox|\\trianglelefteq|\\trianglerighteq|\\succeq|\\succnapprox|\\succneqq|\\succnsim|\\succsim|\\unlhd|\\unrhd|\\gneq|\\gneqq|\\gvertneqq|\\ggg|\\gggtr|\\ngtr|\\precapprox|\\preccurlyeq|\\precnapprox|\\precneqq|\\precnsim|\\precsim|\\Cap|\\cap|\\Cup|\\cup|\\curlyvee|\\dashv|\\curlywedge|\\land|\\lor|\\sqcap|\\sqcup|\\vee|\\veebar|\\wedge|\\Join|\\bowtie|\\Subset|\\Supset|\\nsubseteq|\\nsupseteq|\\subset|\\sqsubset|\\sqsubseteq|\\sqsupset|\\sqsupseteq|\\subseteq|\\subseteqq|\\subsetneq|\\subsetneqq|\\supset|\\supseteq|\\supseteqq|\\supsetneq|\\supsetneqq|\\varsubsetneq|\\varsubsetneqq|\\varsupsetneq|\\varsupsetneqq|\\in|\\ni|\\not\\in|\\owns|\\nparallel|\\parallel|\\propto'
 
 
 def t_FRAC__(t):
@@ -198,6 +197,10 @@ def t_ABOVE(t):
     r'\\above'
     return t
 
+
+def t__OVER(t):
+    r'\\over'
+    return t
 
 
 def t_PRIME(t):
@@ -352,13 +355,8 @@ def t__R_TEX_BRACKET(t):
     r']'
     return t
 
-def t_STYLE(t):
-    r'\\mathbb|\\overline|\\mathrm|\\underline|\\mathcal'
-    return t
 
-def t__OVER(t):
-    r'\\over'
-    return t
+
 
 def t__ENV(t):
     r'\\begin\{align\}|\\end\{align\}|\\begin\{align\*\}|\\end\{align\*\}|\\begin\{alignat\}\{[^}]*\}|\\end\{alignat\}|\\begin\{alignat\*\}\{[^}]*\}|\\end\{alignat\*\}|\\begin\{aligned\}|\\end\{aligned\}|\\begin\{alignedat\}\{[^}]*\}|\\end\{alignedat\}|\\begin\{array\}\{[^}]*\}|\\end\{array\}|\\begin\{eqnarray\}|\\end\{eqnarray\}|\\begin\{eqnarray\*\}|\\end\{eqnarray\*\}|\\begin\{equation\}|\\end\{equation\}|\\begin\{equation\*\}|\\end\{equation\*\}|\\begin\{gather\}|\\end\{gather\}|\\begin\{gather\*\}|\\end\{gather\*\}|\\begin\{gathered\}|\\end\{gathered\}|\\begin\{multline\}|\\end\{multline\}|\\begin\{multline\*\}|\\end\{multline\*\}|\\begin\{split\}|\\end\{split\}|\\begin\{subarray\}\{[^}]*\}|\\end\{subarray\}'

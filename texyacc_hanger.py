@@ -45,16 +45,16 @@ def p_tex_tex_ADD(p):
 
 def p_tex_tex_NEG_term(p):
     'tex : tex NEG term'
-#    neg_node = {
-#        "token": "NEG",
-#        "position": p.lexpos(2),
-#        "children": [p[3]]}
-
-    p[0] = {
+    neg_node = {
         "token": "NEG",
         "position": p.lexpos(2),
+        "children": [p[3]]}
+
+    p[0] = {
+        "token": "ADD",
+        "position": -1,
         "neg_position": p.lexpos(2),
-        "children": [p[1], p[3]]}
+        "children": [p[1], neg_node]}
 
 
 def p_tex_tex_NEG(p):
@@ -186,15 +186,17 @@ def p_abv_tex_abv_tex_ADD(p):
 def p_abv_tex_abv_tex_NEG_term(p):
     'abv_tex : abv_tex NEG term'
 
-#    neg_node = {
-#        "token": "NEG",
-#        "position": p.lexpos(2),
-#        "children": [p[3]]}
-
-    p[0] = {
+    neg_node = {
         "token": "NEG",
         "position": p.lexpos(2),
-        "children": [p[1], p[3]]}
+        "children": [p[3]]}
+
+    p[0] = {
+        "token": "ADD",
+        "position": -1,
+        "implicit": True,
+        "neg_position": p.lexpos(2),
+        "children": [p[1], neg_node]}
 
 
 def p_abv_tex_abv_tex_NEG(p):
@@ -242,15 +244,17 @@ def p_mat_tex_mat_tex_ADD(p):
 def p_mat_tex_mat_tex_NEG_term(p):
     'mat_tex : mat_tex NEG term'
 
-#    neg_node = {
-#        "token": "NEG",
-#        "position": p.lexpos(2),
-#        "children": [p[3]]}
-
-    p[0] = {
+    neg_node = {
         "token": "NEG",
         "position": p.lexpos(2),
-        "children": [p[1], p[3]]}
+        "children": [p[3]]}
+
+    p[0] = {
+        "token": "ADD",
+        "position": -1,
+        "neg_position": p.lexpos(2),
+        "implicit": True,
+        "children": [p[1], neg_node]}
 
 
 def p_mat_tex_mat_tex_NEG(p):
@@ -306,8 +310,13 @@ def p_term_factor(p):
 
 def p_term_term_factor(p):
     'term : term factor'
-    p[1]['children'].append(p[2])
-    p[0] = p[1]
+
+    p[0] = {
+        "token": "TIMES",
+        "position": -1,
+        "implicit": True,
+        "children": [p[1], p[2]]}
+
 
 def p_term_term_TIMES_factor(p):
     'term : term TIMES factor'
@@ -349,18 +358,15 @@ def p_factor_factor_PRIME(p):
 def p_factor_factor_script(p):
     'factor : factor script'
 
- #   base = {
- #       "token": "BASE",
- #       "position": -1,
- #       "implicit": True,
- #       "children": []}
+    base = {
+        "token": "BASE",
+        "position": -1,
+        "implicit": True,
+        "children": [p[1]]}
 
-    if p[2]['token'] == 'HANGER':
-        p[1]['children'].extend(p[2]['children'])
-        p[0] = p[1]
-    else:
-        p[1]["children"].append(p[2])
-        p[0] = p[1]
+    p[2]["children"].append(base)
+
+    p[0] = p[2]
 
 
 def p_pack_atom(p):
@@ -482,14 +488,6 @@ def p_atom_SQRT_atom(p):
 
 def p_atom_SQRT__L_TEX_BRACKET_tex__R_TEX_BRACKET_atom(p):
     'atom : SQRT _L_TEX_BRACKET tex _R_TEX_BRACKET atom'
-#    left = {
-#        "token": "_L_TEX_BRACKET",
-#        "position": p.lexpos(2),
-#        "children": []}
-#    right = {
-#        "token": "_R_TEX_BRACKET",
-#        "position": p.lexpos(4),
-#        "children": []}
     p[0] = {
         "token": "SQRT",
         "position": p.lexpos(1),
@@ -565,36 +563,35 @@ def p_s_atom_TIMES(p):
 def p_script_SUBSCRIPT_s_atom(p):
     'script : SUBSCRIPT s_atom'
 
-    p[0] = {
+    p[1] = {
         "token": "SUBSCRIPT",
         "position": p.lexpos(1),
         "children": [p[2]]}
 
-#    p[0] = {
-#        "token": "HANGER",
-#        "position": -1,
-#        "implicit": True,
-#        "children": [p[1]]}
+    p[0] = {
+        "token": "HANGER",
+        "position": -1,
+        "implicit": True,
+        "children": [p[1]]}
 
 
 def p_script_SUPSCRIPT_s_atom(p):
     'script : SUPSCRIPT s_atom'
 
-    p[0] = {
+    p[1] = {
         "token": "SUPSCRIPT",
         "position": p.lexpos(1),
         "children": [p[2]]}
 
-#    p[0] = {
-#        "token": "HANGER",
-#        "position": -1,
-#        "implicit": True,
-#        "children": [p[1]]}
+    p[0] = {
+        "token": "HANGER",
+        "position": -1,
+        "implicit": True,
+        "children": [p[1]]}
 
 
 def p_script_SUBSCRIPT_s_atom_SUPSCRIPT_s_atom(p):
     'script : SUBSCRIPT s_atom SUPSCRIPT s_atom'
-
 
     p[1] = {
         "token": "SUBSCRIPT",
@@ -635,15 +632,6 @@ def p_script_SUPSCRIPT_s_atom_SUBSCRIPT_s_atom(p):
 
 def p_pair__L_BRACKET_tex__R_BRACKET(p):
     'pair : _L_BRACKET tex _R_BRACKET'
-
-    left = {
-        "token": "_L_BRACKET",
-        "position": p.lexpos(1),
-        "children": []}
-    right = {
-        "token": "_R_BRACKET",
-        "position": p.lexpos(3),
-        "children": []}
 
     p[0] = p[2]
 
